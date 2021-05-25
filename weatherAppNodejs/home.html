@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@200;300;400;900&display=swap">
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", serif;
+}
+
+:root {
+    --main-bg : #1e272e;
+    --main-color : #0097e6;
+}
+
+html{
+    font-size: 62.5%;
+    height: 100%;
+    
+}
+
+.box{
+    width: 20vw;
+    height: 60vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 3rem rgba(0,0,0.2);
+    background: #a5bbdd;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    min-width: 20rem;
+    min-height: 35rem;
+
+}
+
+.wave{
+    opacity: 0.3;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    background: white;
+    width: 50rem;
+    height: 50rem;
+    margin-left: -25rem;
+    margin-top: -25rem;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+    z-index: 1;
+
+}
+.wave-three{
+    animation: drift 5000ms infinite linear;
+    z-index: 2 !important;
+    opacity: 0.2;
+}
+
+.wave-two{
+    animation: drift 7000ms infinite linear;
+    z-index: 3 !important;
+    opacity: 0.1;
+}
+
+
+body {
+    background: #f3f2ef;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+}
+.box::after{
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0,0,0);
+}
+
+@keyframes drift {
+    from{
+        transform: rotate(0deg);
+    }
+    from{
+        transform: rotate(360deg);
+    }
+}
+
+.info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    z-index: 4;
+}
+
+.location{
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.fa-street-view{
+    animation: rotates 3s linear infinite alternate;
+}
+@keyframes rotates {
+    from{
+        transform: translateX(-0.5rem);
+    }
+    to{
+        transform: translateX(0.5rem); 
+    }
+}
+
+#date{
+    text-align: center;
+    margin-top: 0.5rem;
+    color:#57606f ;
+    font-size:1.2rem ;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.temp{
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.tempmin_max{
+    text-align: center;
+    margin-top: 0.3rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #57606f;
+}
+
+#weathercon{
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+#weathercon .fas{
+    font-size: 6rem;
+    animation: fas-anime 3s linear infinite alternate;
+}
+
+@keyframes fas-anime {
+    from{
+        transform: scale(0.8);
+    }
+    to{
+        transform: scale(1.5);
+    }
+    
+}
+@media(max-width:600px){
+    .box{
+        width: 90vw;
+        height: 80vh;
+    }
+    .wave{
+        top: 85%;
+    }
+}
+
+.row {
+    margin: 0;
+}
+
+.main_menu {
+    background-color: var(--main-bg);
+}
+
+.navbar {
+    color: #fff;
+    background-color: var(--main-bg);
+    padding: 2rem 0;
+}
+
+.navbar li {
+    margin-left: 2rem;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+
+.navbar-toggler {
+    background-color: grey;
+}
+
+.fa-snowflake {
+    transition: all linear;
+    color: var(--main-color);
+    -webkit-animation: rot 2s linear infinite ;
+    -moz-animation:    rot 2s linear infinite ;
+    -o-animation:      rot 2s linear infinite ;
+    -ms-transition:    rot 2s linear infinite ; 
+    animation:         rot 2s linear infinite ;
+}
+
+@-webkit-keyframes rot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes rot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes rot {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rot {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* main header */
+
+.main_header_left {
+    height: 70rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main_header_left p {
+    font-size: 2rem;
+}
+
+.main_header_left h1 {
+    font-size: 4rem;
+    margin: 1rem 0 4rem 0;
+    text-transform: capitalize;
+}
+
+.main_header_left span {
+    color: var(--main-color);
+}
+
+.main_header_left button{
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 6px -6px #000;
+    outline: none;
+}
+
+.main_header_left button:hover {
+    box-shadow: 0 8px 6px -6px var(--main-color);
+}
+
+
+
+.main_header_right {
+    height: 70rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main_header_right figure img {
+    filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0.3));
+}
+
+/* weather page style */
+/* temp input fields style code */
+
+.temp_form {
+    width: 60%;
+    position: relative;
+    margin: 5rem auto;
+  }
+  
+  .temp_form input[type="text"] {
+    width: 100%;
+    padding: 2rem 5rem 2rem 2rem;
+    background: #1e202b;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 1.7rem;
+    border-radius: 3rem;
+  }
+  
+  ::placeholder {
+    color: #bfc1c8;
+  }
+  
+  .temp_form input[type="submit"] {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: none;
+    background: #009ad8;
+    padding: 0 3rem;
+    border-radius: 3rem;
+    color: white;
+    font-size: 1.6rem;
+  }
+  
+  .temp_form input[type="submit"]:hover {
+    color: #009ad8;
+    background-color: #fff;
+  }
+  
+  /* temp detials show here */
+  
+  .tempInformation {
+    width: 40rem;
+    margin: auto;
+    min-height: 20rem;
+    background-color: #323544;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-family: "Roboto", sans-serif;
+    
+   }
+  
+  .top_layer {
+    width: 100%;
+    height: 20%;
+    background-color: #2d303d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 2rem 0;
+  }
+  
+  .top_layer p {
+    color: #fff;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  
+  .main_layer {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main_layer #city_name {
+    padding: 2rem 0;
+    color: #bfc1c8;
+    font-weight: 300;
+    font-size: 2rem;
+  }
+  
+  .main_layer .middle_layer {
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+  }
+  
+  .main_layer .middle_layer p,
+  .main_layer .middle_layer .fa {
+    font-size: 7rem;
+    font-weight: 900;
+  }
+  
+  .fa {
+    color: #009ad8;
+  }
+  
+  sup {
+    font-size: 6rem;
+    margin-top: -2rem;
+  }
+  
+  .data_hide {
+    visibility: hidden;
+    transition: all 0.3s linear;
+  }
+/* error page style */
+.errimg img{
+    width: 60rem;
+    height: 30rem;
+}
+
+/* footer code */
+
+footer {
+    width: 100%;
+    background-color: var(--main-bg);
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    line-height: 5rem;
+    font-size: 1.4rem;
+}
+
+/* responsive code */
+
+@media(max-width : 768px) {
+    .main_header_left {
+        height: auto;
+        margin: 5 rem 0;
+    }
+
+    .main_header_right {
+        height: auto;
+        margin-top: 3 rem;
+    }
+}
+    </style>
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="box">
+        <div class="wave -one"></div>
+        <div class="wave -two"></div>
+        <div class="wave -three"></div>
+
+        <div id="weathercon">
+            <i class="fas fa-sun" style="color: #ffbf00;"></i>
+        </div>
+        <div class="info">
+            <h2 class="location"><i class="fas fa-street-view"></i>{%location%},{%country%}</h2>
+            <p id="date">WED | OCT |10:49 am</p>
+            <h1 class="temp">{%tempval%}</h1>
+            <h3 class="tempmin_max">Min {%tempmin%} | Max {%tempmax%} </h3>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const curDate=document.getElementById("date");
+        let weathercon=document.getElementById("weathercon");
+
+        const tempStatus="{%tempstatus%}";
+
+        if(tempStatus=="Sunny"){
+            weathercon.innerHTML="<i class='fas fa-sun' style='color: #eccc68;'></i>";
+        }else if(tempStatus=="Clouds"){
+            weathercon.innerHTML="<i class='fas fa-cloud' style='color: #f1f2f6;'></i>";
+        }else if(tempStatus=="Rainy"){
+            weathercon.innerHTML="<i class='fas fa-rain' style='color: #a4b0be;'></i>";
+        }else{
+            weathercon.innerHTML="<i class='fas fa-cloud' style='color: #44c3de;'></i>";
+        }
+
+        const getCurrentDay=()=>{
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+            let currentTime=new Date();
+            let day=(weekday[currentTime.getDay()]);
+            return day;
+        };
+
+        const getCurrentTime=()=>{
+            var month = new Array();
+            month[0] = "January";
+            month[1] = "February";
+            month[2] = "March";
+            month[3] = "April";
+            month[4] = "May";
+            month[5] = "June";
+            month[6] = "July";
+            month[7] = "August";
+            month[8] = "September";
+            month[9] = "October";
+            month[10] = "November";
+            month[11] = "December";
+            var now=new Date();
+            var month=month[now.getMonth()];
+            
+            var date=now.getDate();
+
+            let hours=now.getHours();
+            let mins=now.getMinutes();
+
+            let periods="AM";
+
+            if(hours>11){
+                periods="PM";
+                if(hours>12) hours-=12;
+            }
+            if(mins<10){
+                mins="0"+mins;
+            }
+
+            
+            return `${month} ${date} | ${hours}:${mins}${periods}`;
+        }; 
+
+        curDate.innerHTML=getCurrentDay() + " | " + getCurrentTime();
+    </script>
+
+</body>
+</html>
